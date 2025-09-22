@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projeto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
 </head>
 <body>
-  <form>
-    <h1>Formulário</h1>
-    <fieldset style:"width=1024">
-      <legend>Dados pessoais</legend>
-      
-      <label for="iptNome">Nome:</label><input type="text" id="iptNome"><br>
-      <label for="iptData">Data de nascimento:</label><input type="date" id="iptData"><br>
-      <label for="iptEnd">Endereço:</label><input style="text" id="iptEnd"><br>
-      <label for="iptBairro">Bairro:</label><input style="text" id="iptBairro">
-      <label for="iptCidade">Cidade:</label><input style="text" id="iptCidade"><br>
-      <label for="iptCEP">CEP:</label><input style="number" id="iptCEP">
-      <label for="iptEstado">Estado</label><select>
-        <option value="CE">Ceará</option>
-        <option value="SP">São Paulo</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="MG">Minas Gerais</option>
-      </select>
-    </fieldset>
-    <fieldset>
-      <legend>Dados profissionais</legend>
-      
-      <span>Natureza do cargo</span>
-      
-    </fieldset>
-  </form>
+    <form>
+        <h1>Formulário</h1>
+
+        <fieldset style="width:1024px">
+            <legend>Dados pessoais</legend>
+
+            <label for="iptNome">Nome:</label><input type="text" id="iptNome"><br>
+            <label for="iptDN">Data de nascimento:</label><input type="date" id="iptData"><br>
+            <label for="iptEnd">Endereço:</label><input type="text" id="iptEND"><br>
+            <label for="iptBairro">Bairro:</label><input type="text" id="iptBairro">
+            <label for="iptCidade">Cidade:</label><input type="text" id="iptCidade"><br>
+            <label for="iptCEP">CEP:</label><input type="number" id="iptCEP">
+            <label for="iptEstado">Estado:</label><select id="iptEstado">
+                <option value="SP">São Paulo</option>
+                <option value="CE">Ceará</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="MG">Minas Gerais</option>
+                </select>
+            </fieldset>
+
+            <fieldset style="width:1024px">
+                <legend>Dados profissionais</legend>
+
+                <span>Natureza do cargo</span><br>
+                <input type="radio" id="iptG" name="NdC" value="0"><label for="iptG">Gerência</label>
+                <input type="radio" id="iptF" name="NdC" value="0"><label for="iptF">Financeiro</label>
+                <input type="radio" id="iptR" name="NdC" value="0"><label for="iptR">Recepção</label>
+                <input type="radio" id="iptA" name="NdC" value="0"><label for="iptA">Admnistrativo</label>
+                <input type="radio" id="iptJ" name="NdC" value="0"> <label for="iptJ">Jurídico</label><br><br>
+
+                <span>Àrea de interesse</span><br>
+                <input type="checkbox" nome="Cmp" value="0"><label for="Cmp">Computação</label>
+                <input type="checkbox" nome="Qui" value="0"><label for="Qui">Química</label>
+                <input type="checkbox" nome="MA" value="0"><label for="MA">Meio Ambiente</label>
+                <input type="checkbox" nome="Eng" value="0"><label for="Eng">Engenharia</label>
+                <input type="checkbox" nome="Mat" value="0"><label for="Mat">Matemática</label><br>
+
+                <span>mini-currículo</span><br>
+                <textarea name="MC" id="iptMC" cols="120" rows="5"></textarea>
+            </fieldset>
+        </fieldset><br>
+    
+    <input type="reset" value="Limpar">
+    <input type="button" value="Enviar">
+    </form>
 </body>
+</html>
