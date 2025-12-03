@@ -1,13 +1,11 @@
-function criarJogo() {
-  for(i=0;i<16;i++) {
-    var box=document.createElement("div");
-    box.setAttribute("id",i+1);
-    box.setAttribute("class","box");
+box.setAttribute("class","box");
     box.textContent=i+1;
     
     var x=Math.floor(Math.random()*16);
     var y=0;
     var z=[3];
+
+    var j=0;
     
     let cont=0;
     let t2;
@@ -16,23 +14,14 @@ function criarJogo() {
       var bx=document.getElementById(x+1);
       bx.style.backgroundColor="red";
       
-      z[cont]=x;
+      z[j]=x+1;
       if(cont==0) {
         bx.addEventListener("click",function() {
           bx.style.backgroundColor="red";
+          y=y+1;
+          slctdBox();
         });
-        slctdBox();
       }
-      
-      function slctdBox() {
-  var clnBox=document.getElementById(z[y]+1);
-  clnBox.addEventListener("click",function () {
-    clnBox.style.backgroundColor="red";
-    y=y+1;
-    slctdBox();
-  });
-}
-      
       t2=setInterval(origColor,600);
     }
     function origColor() {
@@ -40,9 +29,18 @@ function criarJogo() {
       bx.style.backgroundColor="white";
       clearInterval(t2);
       cont=cont+1;
+      j=j+1;
       (cont==3)?clearInterval(t1):cont=cont;
       x=Math.floor(Math.random()*16);
     }
     document.querySelector("#jogo").appendChild(box);
-  }
+    function slctdBox() {
+        var clnBox=document.getElementById(z[y]);
+        clnBox.addEventListener("click",function() {
+            clnBox.style.backgroundColor="red";
+            y=y+1;
+            slctdBox();
+        });
+    }
+  }  
 }
