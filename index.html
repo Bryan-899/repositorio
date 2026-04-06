@@ -3,51 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/styleIndex.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-    <form>
-        <h1>Formulário</h1>
+    <div id="container">
 
-        <fieldset style="width:1024px">
-            <legend>Dados pessoais</legend>
+        <header>
+            <input type="text" id="buscar" placeholder="Buscar">
+        </header>
+        <div id="col">
 
-            <label for="iptNome">Nome:</label><input type="text" id="iptNome"><br>
-            <label for="iptDN">Data de nascimento:</label><input type="date" id="iptData"><br>
-            <label for="iptEnd">Endereço:</label><input type="text" id="iptEND"><br>
-            <label for="iptBairro">Bairro:</label><input type="text" id="iptBairro">
-            <label for="iptCidade">Cidade:</label><input type="text" id="iptCidade"><br>
-            <label for="iptCEP">CEP:</label><input type="number" id="iptCEP">
-            <label for="iptEstado">Estado:</label><select id="iptEstado">
-                <option value="SP">São Paulo</option>
-                <option value="CE">Ceará</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="MG">Minas Gerais</option>
-                </select>
-            </fieldset>
+            
+            
+            <p id="linha"></p>
 
-            <fieldset style="width:1024px">
-                <legend>Dados profissionais</legend>
+                <div id="box1"></div> 
 
-                <span>Natureza do cargo</span><br>
-                <input type="radio" id="iptG" name="NdC" value="0"><label for="iptG">Gerência</label>
-                <input type="radio" id="iptF" name="NdC" value="0"><label for="iptF">Financeiro</label>
-                <input type="radio" id="iptR" name="NdC" value="0"><label for="iptR">Recepção</label>
-                <input type="radio" id="iptA" name="NdC" value="0"><label for="iptA">Admnistrativo</label>
-                <input type="radio" id="iptJ" name="NdC" value="0"> <label for="iptJ">Jurídico</label><br><br>
 
-                <span>Àrea de interesse</span><br>
-                <input type="checkbox" nome="Cmp" value="0"><label for="Cmp">Computação</label>
-                <input type="checkbox" nome="Qui" value="0"><label for="Qui">Química</label>
-                <input type="checkbox" nome="MA" value="0"><label for="MA">Meio Ambiente</label>
-                <input type="checkbox" nome="Eng" value="0"><label for="Eng">Engenharia</label>
-                <input type="checkbox" nome="Mat" value="0"><label for="Mat">Matemática</label><br>
+            <p id="no">Especificações</p>
 
-                <span>mini-currículo</span><br>
-                <textarea name="MC" id="iptMC" cols="120" rows="5"></textarea>
-            </fieldset>
-    <input type="reset" value="Limpar">
-    <input type="button" value="Enviar">
-    </form>
+            <span id="rga">Região</span> <select id="gra">
+    <option value="" disabled selected hidden>Opções</option>
+    <option value="Bloco 1">Bloco 1</option>
+    <option value="Bloco 2">Bloco 2</option>
+    <option value="Bloco 3">Bloco 3</option>
+    <option value="RA">RA</option>
+    <option value="Refeitorio acadêmico">Refeitorio acadêmico</option>
+    <option value="Quadra">Quadra</option>
+    </select>
+
+    <span id="cat">Categoria</span> <select id="in">
+        <option value="" disabled selected hidden>Opções</option>
+        <option value="Roupa">Roupa</option>
+        <option value="Garrafa">Garrafa</option>
+        <option value="Acessorios">Acessorios</option>
+        <option value="Eletronicos">Eletronicos</option>
+        <option value="Cartões">Cartões</option>
+        <option value="Livros">Livros</option>
+        <option value="Chave">Chave</option>
+    </select>
+
+    <span id="mr">Marca</span>
+    <input id="marca" type="text">
+
+    <p id="int" >Itens selecionados: <span id="rsto"></span></p>
+    <button onclick="click()" id="btn">Buscar</button>
+    
+        </div>
+        <footer>
+            <ul>
+                <li><i class="material-icons">search</i></li>
+                <li><i class="material-icons">add</i></li>
+                <li><i class="material-icons">person</i></li>
+                <li><i class="material-icons">info</i></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="js/script.js" ></script>
 </body>
 </html>

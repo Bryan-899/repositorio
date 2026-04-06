@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar item</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div id="logo">
+                <i class="material-icons"></i>
+            </div>
+        </header>
+        <div id="col">
+            <label for="iptNome">Nome:</label>
+            <input id="iptNome" type="text">
+            <br>
+            <label for="iptCor">Cor:</label>
+            <input id="iptCor" type="text">
+            <br>
+            <label for="iptData">Encotrado:</label>
+            <input id="iptData" type="date">
+            <br>
+            <label for="iptMarca">Marca:</label>
+            <input id="iptMarca" type="text">
+            <br>
+            <label for="iptDataFab">Data de fabricação:</label>
+            <input id="iptDataFab" type="date">
+            <br><br>
+            <textarea name="descricao" rows="10" cols="120" placeholder="Descrição"></textarea>
+        </div>
+        <button onclick="enviarItem()">Enviar</button>
+        <footer>
+            <ul>
+                <li><i class="material-icons">search</i></li>
+                <li><i class="material-icons">add</i></li>
+                <li><i class="material-icons">person</i></li>
+                <li><i class="material-icons">info</i></li>
+            </ul>
+        </footer>
+    </div>
+    <script>
+async function enviarItem() {
+    const nome = document.getElementById('iptNome').value;
+    const cor = document.getElementById('iptCor').value;
+    const data = document.getElementById('iptData').value;
+    const marca = document.getElementById('iptMarca').value;
+    const dataFab = document.getElementById('iptDataFab').value;
+    const descricao = document.querySelector('textarea').value;
+    const local = document.getElementById('iptLocal').value;
+    const categoria = document.getElementById('iptCategoria').value;
+    const item = {
+        title: nome,
+        cor: cor,
+        data: data,
+        marca: marca,
+        dataFab: dataFab,
+        categoria: categoria,
+        description: descricao,
+        type: "achado", // você pode mudar depois
+        location: local,
+        user_id: 1 // depois você melhora isso
+    };
+
+    try {
+        const resposta = await fetch('http://localhost:3000/items', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        });
+
+        const dataResposta = await resposta.json();
+        console.log(dataResposta);
+
+        alert('Item cadastrado com sucesso!');
+    } catch (erro) {
+        console.error(erro);
+        alert('Erro ao enviar item');
+    }
+}
+</script>
+</body>
+</html>
