@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Dados do Banco</h1>
+<button onclick="carregar()">Carregar Dados</button>
+
+<pre id="saida"></pre>
+
+<script>
+async function carregar() {
+  try {
+    const resposta = await fetch('http://localhost:3000/items');
+    const dados = await resposta.json();
+
+    document.getElementById('saida').textContent =
+      JSON.stringify(dados, null, 2);
+
+  } catch (erro) {
+    console.error(erro);
+  }
+}
+</script>
+
+</body>
+</html>

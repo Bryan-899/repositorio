@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Itens encontrados</title>
+</head>
+<body>
+
+  <h1>Itens encontrados</h1>
+
+  <div id="lista"></div>
+
+  <script>
+    async function carregarItens() {
+      try {
+        const resposta = await fetch('http://localhost:3000/items');
+        const items = await resposta.json();
+
+        const lista = document.getElementById('lista');
+        lista.innerHTML = '';
+
+        itens.forEach(item => {
+          const div = document.createElement('div');
+
+          div.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <p><strong>Local:</strong> ${item.location}</p>
+            <hr>
+          `;
+
+          lista.appendChild(div);
+        });
+
+      } catch (erro) {
+        console.error(erro);
+      }
+    }
+
+    carregarItens();
+  </script>
+
+</body>
+</html>
