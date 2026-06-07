@@ -16,7 +16,9 @@
         </header>
         <div id="col">
             <div id="col1">
-                <div id="imagem"></div>
+                
+                <label for="iptImagem" id="upload">Clique para adicionar foto 📸</label>
+                <input type="file" id="iptImagem" style="display: none;">
                 <textarea id="descricao" name="descricao" style="resize:none;" rows="8" cols="60" placeholder="Descrição"></textarea>
             </div>
             <div id="col2">
@@ -36,10 +38,30 @@
                 <input id="iptDataFab" type="date">
                 <br>
                 <label for="iptLocal">Local onde foi encotrado:</label>
-                <input id="iptLocal" type="text">
+                <select id="iptLocal">
+                    <option value="" disabled selected hidden>Opções</option>
+                    <option value="Bloco 1">Bloco 1</option>
+                    <option value="Bloco 2">Bloco 2</option>
+                    <option value="Bloco 3">Bloco 3</option>
+                    <option value="Bloco 4">Bloco 4</option>
+                    <option value="CentroAcademido">Centro Academido</option>
+                    <option value="BlocoDaIndusria">Bloco da Industria</option>
+                    <option value="RA">RA</option>
+                    <option value="Cantina">Cantina</option>
+                    <option value="Quadra">Quadra</option>
+                </select>
                 <br>
                 <label for="iptCategoria">Categoria:</label>
-                <input id="iptCategoria" type="text">
+                 <select id="iptCategoria">
+                    <option value="" disabled selected hidden>Opções</option>
+                    <option value="Roupa">Roupa</option>
+                    <option value="Garrafa">Garrafa</option>
+                    <option value="Acessorios">Acessorios</option>
+                    <option value="Eletronicos">Eletronicos</option>
+                    <option value="Cartões">Cartões</option>
+                    <option value="Livros">Livros</option>
+                    <option value="Chave">Chave</option>
+                </select>
                 <br><br>
                 <button onclick="enviarItem()">Enviar</button>
             </div>
@@ -55,45 +77,49 @@
     </div>
     <script>
 async function enviarItem() {
-    const nome = document.getElementById('iptNome').value;
-    const cor = document.getElementById('iptCor').value;
-    const data = document.getElementById('iptData').value;
-    const marca = document.getElementById('iptMarca').value;
-    const dataFab = document.getElementById('iptDataFab').value;
-    const descricao = document.querySelector('textarea').value;
-    const local = document.getElementById('iptLocal').value;
-    const categoria = document.getElementById('iptCategoria').value;
-    const item = {
-        title: nome,
-        cor: cor,
-        data: data,
-        marca: marca,
-        dataFab: dataFab,
-        categoria: categoria,
-        description: descricao,
-        type: "achado", // você pode mudar depois
-        location: local,
-        user_id: 1 // depois você melhora isso
-    };
+    const formData = new FormData();
+
+    formData.append('title', document.getElementById('iptNome').value);
+    formData.append('cor', document.getElementById('iptCor').value);
+    formData.append('data', document.getElementById('iptData').value);
+    formData.append('marca', document.getElementById('iptMarca').value);
+    formData.append('dataFab', document.getElementById('iptDataFab').value);
+    formData.append('categoria', document.getElementById('iptCategoria').value);
+    formData.append('description', document.getElementById('descricao').value);
+    formData.append('location', document.getElementById('iptLocal').value);
+    formData.append('type', 'achado');
+    formData.append('user_id', 1);
+
+    // 📸 imagem
+    const imagem = document.getElementById('iptImagem').files[0];
+    formData.append('imagem', imagem);
 
     try {
         const resposta = await fetch('http://localhost:3000/items', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(item)
+            body: formData
         });
 
         const dataResposta = await resposta.json();
         console.log(dataResposta);
 
-        alert('Item cadastrado com sucesso!');
+        alert('Item cadastrado com imagem!');
     } catch (erro) {
         console.error(erro);
         alert('Erro ao enviar item');
     }
 }
+const input = document.getElementById('iptImagem');
+const upload = document.getElementById('upload');
+
+input.addEventListener('change', function () {
+    const file = this.files[0];
+
+    if (file) {
+        const url = URL.createObjectURL(file);
+        upload.innerHTML = `<img src="${url}" style="width:100%; height:100%; object-fit:cover;">`;
+    }
+});
 </script>
 </body>
 </html>
