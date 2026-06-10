@@ -1,11 +1,12 @@
- *{
-    padding: 0px;
-    margin: 0px;
+* {
+    padding:0px;
+    margin:0px;
     overflow-x:hidden;
     overflow-y:hidden;
 }
 body {
     height:100vh;
+    width:100%;
 }
 #container {
     height:100vh;
@@ -29,60 +30,52 @@ header {
     font-size: 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     position: relative;
-    top: -210px;
-    left: 60px;
 }
-#cat{
-    position: relative;
-    top: -100px;
-    left: -188px;
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-#mr{
-    position: relative;
-    top: -50px;
-    left: -345px;
+.card h3 {
+  margin: 5px 0;
+  font-size: 16px;
 }
-#marca{
-    position: relative;
-    top: -50px;
-    left: -335px;
-}
-#rga{
-    position: relative;
-    top: -150px;
-    left: 15px;
-}
-#gra{
-    position: relative;
-    top: -150px;
-    left: 20px;
-}
-#in{
-    position: relative;
-    top: -100px;
-    left: -185px;
-}
-#linha{
-    border: 1px solid black;
-    width: 0px;
-    height:100%;
-
-    position: absolute;
-    left: 345px;
-}
-#int{
-    font-size: 20px;
-    position: relative;
-    left: 360px;
+.card p {
+  font-size: 12px;
 }
 #col {
     height:72%;
-    border:2px solid black;
-    display: flexbox;
-    flex-wrap: wrap; /* Permite quebrar a linha se não couber */
-    align-items: center; /* Alinha tudo verticalmente no meio */
-    gap: 10px; /* Cria um espaço entre os elementos */
+    display:flex;
+    flex-direction:row;
+    /* align-items:center;
+    justify-content:center; */
 }
+#col1 {
+    height:100%;
+    width:25%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    overflow-y:auto;
+    border:1px solid black;
+}
+#col2 {
+    height:100%;
+    width:75%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow-y:auto;
+    border:1px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 15px;
+}
+
 footer {
     height:8%;
     border:1px solid black;
@@ -112,7 +105,6 @@ li:hover {
     height:100px;
     width:100px;
 }
-
 #btn{
     background-color:rgb(38, 190, 140);
     border-radius: 100px;
@@ -128,27 +120,4 @@ li:hover {
 #btn:hover{
     background-color: gray;
     box-shadow: 0px 0px 10px black;
-}
-#box1 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 10px;
-}
-
-.card {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  background: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-.card p {
-  font-size: 12px;
 }
