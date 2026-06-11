@@ -4,53 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar item Encontrado</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/styleAddItem.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
     <div id="container">
         <header>
-            <div id="logo">
-                <i class="material-icons"></i>
+            <div class="logo-area">
+            <img src="img/WhatsApp_Image_2026-04-13_at_14.41.10-removebg-preview.png" alt="Lost Found" id="logo">
+            <h1>LOST & FOUND</h1>
             </div>
+            <p>Cadastrar Item Encontrado </p>
         </header>
         <div id="col">
             <div id="col1">
                 
                 <label for="iptImagem" id="upload">Clique para adicionar foto 📸</label>
-                <input type="file" id="iptImagem" style="display: none;">
-                <textarea id="descricao" name="descricao" style="resize:none;" rows="8" cols="60" placeholder="Descrição"></textarea>
+                    <input type="file" id="iptImagem" style="display: none;">
+                    <textarea id="descricao" name="descricao" style="resize:none;" rows="8" cols="60" placeholder="Descrição"></textarea>
             </div>
             <div id="col2">
-                <label for="iptNome">Nome:</label>
-                <input id="iptNome" type="text">
-                <br>
-                <label for="iptCor">Cor:</label>
-                <input id="iptCor" type="text">
-                <br>
-                <label for="iptData">Encotrado:</label>
-                <input id="iptData" type="date">
-                <br>
-                <label for="iptMarca">Marca:</label>
-                <input id="iptMarca" type="text">
-                <br>
-                <label for="iptDataFab">Data de fabricação:</label>
-                <input id="iptDataFab" type="date">
-                <br>
-                <label for="iptLocal">Local onde foi encotrado:</label>
-                <select id="iptLocal">
-                    <option value="" disabled selected hidden>Opções</option>
-                    <option value="Bloco 1">Bloco 1</option>
-                    <option value="Bloco 2">Bloco 2</option>
-                    <option value="Bloco 3">Bloco 3</option>
-                    <option value="Bloco 4">Bloco 4</option>
-                    <option value="CentroAcademido">Centro Academido</option>
-                    <option value="BlocoDaIndusria">Bloco da Industria</option>
-                    <option value="RA">RA</option>
-                    <option value="Cantina">Cantina</option>
-                    <option value="Quadra">Quadra</option>
-                </select>
-                <br>
                 <label for="iptCategoria">Categoria:</label>
                  <select id="iptCategoria">
                     <option value="" disabled selected hidden>Opções</option>
@@ -62,7 +35,41 @@
                     <option value="Livros">Livros</option>
                     <option value="Chave">Chave</option>
                 </select>
-                <br><br>
+                <br>
+
+                <label for="iptMarca">Marca:</label>
+                    <input id="iptMarca" type="text">
+                <br>
+
+                <label for="iptLocal">Local onde foi encotrado:</label>
+                <select id="iptLocal">
+                    <option value="" disabled selected hidden>Opções</option>
+                    <option value="Bloco 1">Bloco 1</option>
+                    <option value="Bloco 2">Bloco 2</option>
+                    <option value="Bloco 3">Bloco 3</option>
+                    <option value="Bloco 4">Bloco 4</option>
+                    <option value="CentroAcademico">Centro Academido</option>
+                    <option value="BlocoDaIndustria">Bloco da Industria</option>
+                    <option value="RA">RA</option>
+                    <option value="Cantina">Cantina</option>
+                    <option value="Quadra">Quadra</option>
+                </select>
+                <br>
+
+                <label for="iptData">Data encotrada:</label>
+                    <input id="iptData" type="date">
+                <br>
+
+                <label for="iptNome">Nome de quem encontrou:</label>
+                    <input id="iptNome" type="text">
+                <br>
+
+                 <label>Informações de Contato</label>
+                    <input type="text" id="contato" placeholder="Telefone ou WhatsApp">
+                <br>
+                
+                
+
                 <button onclick="enviarItem()">Enviar</button>
             </div>
         </div>
@@ -75,7 +82,7 @@
                 </li>
                 <li>
                     <a href="intermediaria.html">
-                        <i class="material-icons">add</i>
+                        <i class="material-icons ativo">add</i>
                     </a>
                 </li>
 
