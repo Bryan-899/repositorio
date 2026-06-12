@@ -15,8 +15,43 @@
 ========================= */
 body {
     min-height: 100vh;
-    background: #020617;
     color: #fff;
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(0,212,255,.15),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(123,44,255,.15),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #020617,
+            #06152e,
+            #020617
+        );
+
+    color:#fff;
+    overflow-x:hidden;
+
+    animation:fundo 12s ease-in-out infinite;
+}
+
+@keyframes fundo{
+    0%,100%{
+        filter:saturate(1);
+    }
+
+    50%{
+        filter:saturate(1.2);
+    }
+}
+
 }
 
 /* =========================
@@ -182,7 +217,7 @@ main {
 ========================= */
 footer {
     height: 70px;
-
+    margin-top: auto;
     background: rgba(5,15,35,.92);
     backdrop-filter: blur(12px);
 

@@ -76,70 +76,42 @@ header p{
 /* =========================
    FUNDO PRINCIPAL
 ========================= */
-body {
-    background: #020617;
-    color: #fff;
-    overflow-x: hidden;
-}
 
-/* =========================
-   🔥 NÉVOA MAIS FORTE (AGORA VISÍVEL)
-========================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    top: -30%;
-    left: -30%;
-    width: 160%;
-    height: 160%;
-
+body{
     background:
-        radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.32), transparent 45%),
-        radial-gradient(circle at 80% 70%, rgba(77, 238, 255, 0.26), transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(0, 174, 239, 0.18), transparent 55%);
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(0,212,255,.15),
+            transparent 25%
+        ),
 
-    animation: fogMove 22s ease-in-out infinite;
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(123,44,255,.15),
+            transparent 25%
+        ),
 
-    z-index: -3;
+        linear-gradient(
+            180deg,
+            #020617,
+            #06152e,
+            #020617
+        );
 
-    filter: blur(50px);
+    color:#fff;
+    overflow-x:hidden;
+
+    animation:fundo 12s ease-in-out infinite;
 }
 
-@keyframes fogMove {
-    0% { transform: translate(0,0) scale(1); }
-    50% { transform: translate(6%, -5%) scale(1.15); }
-    100% { transform: translate(0,0) scale(1); }
-}
+@keyframes fundo{
+    0%,100%{
+        filter:saturate(1);
+    }
 
-/* =========================
-   🌊 ONDAS MAIS VISÍVEIS
-========================= */
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-
-    background: repeating-linear-gradient(
-        120deg,
-        transparent,
-        transparent 25px,
-        rgba(0, 212, 255, 0.09) 26px,
-        transparent 60px
-    );
-
-    animation: waveMove 30s linear infinite;
-
-    z-index: -2;
-
-    opacity: 0.85;
-}
-
-@keyframes waveMove {
-    from { transform: translateX(0); }
-    to { transform: translateX(-20%); }
+    50%{
+        filter:saturate(1.2);
+    }
 }
 
 /* =========================
@@ -148,6 +120,8 @@ body::after {
 #container {
     min-height: 100vh;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* =========================
@@ -196,7 +170,6 @@ body::after {
     }
 }
 
-/* hover ativo */
 #col1:hover, #col2:hover {
     border-color: rgba(0, 212, 255, 0.55);
 
@@ -218,7 +191,7 @@ label {
 }
 
 /* =========================
-   🔥 INPUTS / SELECTS / TEXTAREA (BRILHO MAIS FORTE)
+   INPUTS / SELECTS / TEXTAREA
 ========================= */
 
 input,
@@ -241,7 +214,6 @@ textarea {
         inset 0 0 8px rgba(0, 212, 255, 0.06);
 }
 
-/* FOCO COM BRILHO FORTE (IA ATIVANDO CAMPO) */
 input:focus,
 select:focus,
 textarea:focus {
@@ -255,7 +227,7 @@ textarea:focus {
 }
 
 /* =========================
-   UPLOAD FOTO (BRILHO MAIS PRESENTE)
+   UPLOAD FOTO
 ========================= */
 
 #upload {
@@ -326,7 +298,7 @@ button:hover {
 }
 
 /* =========================
-   FOOTER (MANTIDO)
+   FOOTER
 ========================= */
 
 footer{
