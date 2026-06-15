@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seu Perfil - Lost Found</title>
     <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/stylePerfil.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -14,28 +15,35 @@
                 <img src="img/WhatsApp_Image_2026-04-13_at_14.41.10-removebg-preview.png" alt="Logo Lost Found" id="logo">
                 <h1>LOST FOUND</h1>
             </div>
-            <p>O que você deseja fazer?</p>
+            <p>Suas informações de Perfil</p>
         </header>
            
-        <div id="col3">
-            <div id="imagem"></div>
+
+        <div id="perfil-card">
+
+            <p id="tituloFoto">Foto de Perfil</p>
+            <label for="iptFoto" id="fotoPerfil"></label>
+
+                <input type="file" id="iptFoto" hidden>
+
             <label for="iptNome">Nome:</label>
-            <input id="iptNome" type="text">
-            <br><br>
-            <label for="iptIdade">Idade:</label>
-            <input id="iptIdade" type="number">
-            <br><br>
+                <input id="iptNome" type="text">
+
             <label for="iptCurso">Curso:</label>
-            <input id="iptCurso" type="text">
-            <br><br>
+                <input id="iptCurso" type="text">
+
             <label for="iptSemestre">Semestre:</label>
-            <input id="iptSemestre" type="text">
-            <br><br>
-            <label for="iptSolicitacao">Solicitações:</label>
-            <input id="iptSolicitacao" type="text">
-            <br><br>
-            <textarea name="status" style="resize:none;" rows="8" cols="60" placeholder="Status"></textarea>
+                <input id="iptSemestre" type="text">
+
+            <label for="iptContato">Contato:</label>
+                <input id="iptContato" type="text">
+
+            
+
+            <button>Salvar Alterações</button>
+
         </div>
+
         <footer>
             <ul>
                 <li>

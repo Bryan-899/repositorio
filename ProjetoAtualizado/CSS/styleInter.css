@@ -1,132 +1,7 @@
 /* =========================
-   FONTE
+   MAIN LAYOUT
 ========================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-/* =========================
-   BODY (BASE SIMPLES E LIMPA)
-========================= */
-body {
-    min-height: 100vh;
-    color: #fff;
-    background:
-        radial-gradient(
-            circle at 15% 50%,
-            rgba(0,212,255,.15),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(123,44,255,.15),
-            transparent 25%
-        ),
-
-        linear-gradient(
-            180deg,
-            #020617,
-            #06152e,
-            #020617
-        );
-
-    color:#fff;
-    overflow-x:hidden;
-
-    animation:fundo 12s ease-in-out infinite;
-}
-
-@keyframes fundo{
-    0%,100%{
-        filter:saturate(1);
-    }
-
-    50%{
-        filter:saturate(1.2);
-    }
-}
-
-}
-
-/* =========================
-   CONTAINER
-========================= */
-#container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* =========================
-   HEADER (PADRÃO DO PROJETO)
-========================= */
-header {
-    text-align: center;
-    padding: 30px 20px;
-
-    background: rgba(8,18,35,.75);
-    backdrop-filter: blur(12px);
-
-    border-bottom: 1px solid rgba(77,225,255,.25);
-
-    box-shadow: 0 0 20px rgba(77,225,255,.12);
-}
-
-.logo-area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
-#logo {
-    width: 90px;
-
-    filter:
-        brightness(0)
-        invert(1)
-        drop-shadow(0 0 10px #4de1ff)
-        drop-shadow(0 0 20px #4de1ff);
-
-    transition: .3s;
-}
-
-#logo:hover {
-    transform: scale(1.08);
-
-    filter:
-        brightness(0)
-        invert(1)
-        drop-shadow(0 0 15px #4de1ff)
-        drop-shadow(0 0 30px #4de1ff)
-        drop-shadow(0 0 45px #4de1ff);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-
-    color: #4de1ff;
-
-    text-shadow:
-        0 0 10px rgba(77,225,255,.5),
-        0 0 25px rgba(77,225,255,.3);
-}
-
-header p {
-    margin-top: 8px;
-    color: #c7d7e6;
-}
-
-/* =========================
-   MAIN (CARDS CENTRALIZADOS)
-========================= */
 main {
     flex: 1;
 
@@ -143,6 +18,7 @@ main {
 /* =========================
    CARDS DE OPÇÃO
 ========================= */
+
 .card-opcao {
     width: 380px;
     min-height: 220px;
@@ -170,7 +46,6 @@ main {
     transition: .3s ease;
 }
 
-/* hover padrão IA */
 .card-opcao:hover {
     transform: translateY(-8px);
 
@@ -184,6 +59,7 @@ main {
 /* =========================
    ÍCONE DO CARD
 ========================= */
+
 .icone-card {
     margin-bottom: 15px;
 }
@@ -198,6 +74,7 @@ main {
 /* =========================
    TEXTOS
 ========================= */
+
 .card-opcao h2 {
     font-size: 1.2rem;
     margin-bottom: 10px;
@@ -213,67 +90,9 @@ main {
 }
 
 /* =========================
-   FOOTER (PADRÃO DO PROJETO)
-========================= */
-footer {
-    height: 70px;
-    margin-top: auto;
-    background: rgba(5,15,35,.92);
-    backdrop-filter: blur(12px);
-
-    border-top: 1px solid rgba(74, 198, 223, 0.3);
-
-    box-shadow:
-        0 -2px 15px rgba(77,225,255,.15),
-        0 -5px 30px rgba(77,225,255,.08);
-}
-
-footer ul {
-    height: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    list-style: none;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-footer i {
-    font-size: 28px;
-    color: #dbe7f2;
-
-    transition: .3s;
-
-    text-shadow: 0 0 5px rgba(77,225,255,.2);
-}
-
-footer i:hover {
-    color: #4de1ff;
-
-    transform: translateY(-5px);
-
-    text-shadow:
-        0 0 10px #4de1ff,
-        0 0 20px #4de1ff,
-        0 0 30px #4de1ff;
-}
-
-.ativo {
-    color: #4de1ff !important;
-
-    text-shadow:
-        0 0 10px #4de1ff,
-        0 0 20px #4de1ff,
-        0 0 30px #4de1ff;
-}
-
-/* =========================
    RESPONSIVO
 ========================= */
+
 @media (max-width: 900px) {
     main {
         flex-direction: column;

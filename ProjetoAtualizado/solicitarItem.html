@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar item Perdido - Lost Found</title>
     <link rel="stylesheet" href="CSS/base.css">
+    <link rel="stylesheet" href="CSS/styleSolItem.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
@@ -13,29 +14,64 @@
         <div class="logo-area">
                 <img src="img/WhatsApp_Image_2026-04-13_at_14.41.10-removebg-preview.png" alt="Lost Found" id="logo">
                 <h1>LOST & FOUND</h1>
-            </div>
+        </div>
+            <p>Preencha as informações e faça o cadastro do item perdido.</p>
+
         </header>
         <div id="col">
-            <div id="col3">
-                <label for="iptNome">Nome:</label>
-                <input id="iptNome" type="text">
-                <br><br>
-                <label for="iptCor">Cor:</label>
-                <input id="iptCor" type="text">
-                <br><br>
-                <label for="iptData">Visto pela última vez em:</label>
-                <input id="iptData" type="date">
-                <br><br>
-                <label for="iptMarca">Marca:</label>
-                <input id="iptMarca" type="text">
-                <br><br>
-                <label for="iptDataFab">Data de fabricação:</label>
-                <input id="iptDataFab" type="date">
-                <br><br>
-                <textarea name="descricao" rows="10" cols="120" placeholder="Descrição"></textarea> 
-            </div>
-            
+            <div id="col1">
+
+            <label for="iptImagem" id="upload">
+            Clique para adicionar foto 📸
+            </label>
+                <input type="file" id="iptImagem" style="display:none;">
+
+            <textarea id="descricao" placeholder="Descreva o item perdido, características importantes, onde costuma usá-lo, adesivos, marcas de identificação, etc."></textarea>
         </div>
+            
+        <div id="col2">
+
+            <label for="iptCategoria">Categoria:</label>
+            <select id="iptCategoria">
+                <option value="" disabled selected hidden>Opções</option>
+                <option value="Roupa">Roupa</option>
+                <option value="Garrafa">Garrafa</option>
+                <option value="Acessorios">Acessórios</option>
+                <option value="Eletronicos">Eletrônicos</option>
+                <option value="Cartoes">Cartões</option>
+                <option value="Livros">Livros</option>
+                <option value="Chave">Chave</option>
+            </select>
+
+            <label for="iptNome">Nome do Item:</label>
+                <input id="iptNome" type="text">
+
+            <label for="iptMarca">Marca:</label>
+                <input id="iptMarca" type="text">
+
+            <label for="iptLocal">Local onde foi perdido:</label>
+            <select id="iptLocal">
+                <option value="" disabled selected hidden>Opções</option>
+                <option value="Bloco 1">Bloco 1</option>
+                <option value="Bloco 2">Bloco 2</option>
+                <option value="Bloco 3">Bloco 3</option>
+                <option value="Bloco 4">Bloco 4</option>
+                <option value="CentroAcademico">Centro Acadêmico</option>
+                <option value="BlocoDaIndustria">Bloco da Indústria</option>
+                <option value="RA">RA</option>
+                <option value="Cantina">Cantina</option>
+                <option value="Quadra">Quadra</option>
+            </select>
+
+            <label for="iptData">Data em que foi perdido:</label>
+                <input id="iptData" type="date">
+
+            <label for="contato">Informações de Contato:</label>
+                <input type="text" id="contato" placeholder="Telefone ou WhatsApp">
+
+            <button onclick="enviarItemPerdido()">Publicar Anúncio</button>
+        </div>
+    </div>
         <footer>
             <ul>
                 <li>

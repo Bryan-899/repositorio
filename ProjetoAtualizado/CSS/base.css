@@ -64,10 +64,14 @@ body{
 ========================= */
 
 header{
+     width: calc(100% - 40px);
+    margin: 20px auto;
+    border-radius: 16px;
+
     text-align:center;
     padding:30px 20px;
 
-    background:rgba(8,18,35,.75);
+    background:rgba(3, 10, 24, 0.92);
     backdrop-filter:blur(12px);
 
     border-bottom:1px solid rgba(77,225,255,.3);
@@ -178,10 +182,13 @@ textarea:focus{
 ========================= */
 
 footer{
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    border-radius: 16px;
     margin-top: auto;
     height:70px;
 
-    background:rgba(5,15,35,.92);
+    background:rgba(3, 10, 24, 0.92);
 
     backdrop-filter:blur(12px);
 
