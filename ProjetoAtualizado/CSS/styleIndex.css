@@ -156,18 +156,92 @@
 
 /* CARD REAL */
 
+/* GRID MAIS BONITO */
+
+
+/* CARD */
 .card {
-    height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
 
-    background: rgba(8,18,35,.55);
-    border: 1px solid rgba(77,225,255,.2);
-    border-radius: 16px;
+  background: rgba(8, 18, 35, 0.75);
+  backdrop-filter: blur(12px);
 
-    padding: 15px;
+  border: 1px solid rgba(77,225,255,0.2);
 
-    color: #fff;
+  box-shadow:
+    0 0 10px rgba(77,225,255,0.1);
+
+  transition: 0.3s;
+  cursor: pointer;
 }
 
+.card:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 0 25px rgba(77,225,255,0.4);
+}
+
+/* IMAGEM */
+.card-img {
+  height: 150px;
+  background: #020617;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTEÚDO */
+.card-body {
+  padding: 12px;
+}
+
+.card-body h3 {
+  font-size: 15px;
+  color: #4de1ff;
+  margin-bottom: 5px;
+}
+
+/* LOCAL */
+.local {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* DESCRIÇÃO */
+.desc {
+  font-size: 12px;
+  margin: 6px 0;
+  color: #c7d7e6;
+}
+
+/* RODAPÉ DO CARD */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* TAG */
+.tag {
+  background: rgba(77,225,255,0.15);
+  color: #4de1ff;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  border: 1px solid rgba(77,225,255,0.3);
+}
+
+/* MARCA */
+.marca {
+  font-size: 11px;
+  color: #94a3b8;
+}
 /* =========================
    FOOTER
 ========================= */
