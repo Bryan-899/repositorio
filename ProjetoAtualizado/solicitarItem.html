@@ -99,5 +99,45 @@
             </ul>
         </footer>
     </div>
+    <script>
+async function enviarItemPerdido() {
+    const formData = new FormData();
+
+    formData.append('title', document.getElementById('iptNome').value);
+    formData.append('data', document.getElementById('iptData').value);
+    formData.append('marca', document.getElementById('iptMarca').value);
+    formData.append('categoria', document.getElementById('iptCategoria').value);
+    formData.append('description', document.getElementById('descricao').value);
+    formData.append('location', document.getElementById('iptLocal').value);
+    formData.append('type', 'perdido');
+    formData.append('user_id', 1);
+    formData.append('contato', document.getElementById('contato').value);
+
+    // imagem
+    const imagem = document.getElementById('iptImagem').files[0];
+
+    if (imagem) {
+        formData.append('imagem', imagem);
+    }
+
+    try {
+        const resposta = await fetch('http://localhost:3000/items', {
+            method: 'POST',
+            body: formData
+        });
+
+        const dataResposta = await resposta.json();
+        console.log(dataResposta);
+
+        alert('Item cadastrado com sucesso!');
+
+        window.location.href = "intermediaria.html";
+
+    } catch (erro) {
+        console.error(erro);
+        alert('Erro ao enviar item');
+    }
+}
+</script>
 </body>
 </html>
