@@ -63,8 +63,8 @@
                     <input id="iptData" type="date">
                 <br>
 
-                <label for="iptNome">Nome de quem encontrou:</label>
-                    <input id="iptNome" type="text">
+                <label for="iptName">Nome de quem encontrou:</label>
+                    <input id="iptName" type="text">
                 <br>
 
                  <label>Informações de Contato</label>
@@ -107,16 +107,16 @@
 async function enviarItem() {
     const formData = new FormData();
 
-    formData.append('title', document.getElementById('iptNome').value);
-    formData.append('cor', document.getElementById('iptCor').value);
     formData.append('data', document.getElementById('iptData').value);
     formData.append('marca', document.getElementById('iptMarca').value);
-    formData.append('dataFab', document.getElementById('iptDataFab').value);
     formData.append('categoria', document.getElementById('iptCategoria').value);
     formData.append('description', document.getElementById('descricao').value);
     formData.append('location', document.getElementById('iptLocal').value);
     formData.append('type', 'achado');
     formData.append('user_id', 1);
+    formData.append('contato', document.getElementById('contato').value);
+    formData.append('nome', document.getElementById('iptName').value);
+
 
     // 📸 imagem
     const imagem = document.getElementById('iptImagem').files[0];
@@ -131,10 +131,13 @@ async function enviarItem() {
         const dataResposta = await resposta.json();
         console.log(dataResposta);
 
-        alert('Item cadastrado com imagem!');
+        alert('Item cadastrado com sucesso!');
+
+        window.location.href = "intermediaria.html";
+
     } catch (erro) {
         console.error(erro);
-        alert('Erro ao enviar item');
+        alert('Erro ao enviar item,insira todos os dados');
     }
 }
 const input = document.getElementById('iptImagem');
